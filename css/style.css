@@ -1,0 +1,277 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  background-image: url(/images/pattern-circles.svg), url(/images/bg-pattern.svg);
+    background-repeat: no-repeat;
+    background-position: top 4rem left 51%, left top -2rem;
+    font-family: "Manrope", sans-serif;
+    background-color: hsl(230, 100%, 99%);
+    background-size: auto, 96rem;
+}
+.wrapper{
+  margin-top: 6rem;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 4.5rem;
+}
+.heading {
+  color: hsl(227, 35%, 25%);
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.signup-conditions {
+  font-size: 0.8rem;
+  color: hsl(225, 20%, 60%);
+  margin: 0 5.75rem;
+  line-height: 1.5rem;
+  letter-spacing: 0.02rem;
+}
+.container {
+  color: hsl(225, 20%, 60%);
+  background-color: #fff;
+  font-size: 0.8rem;
+  width: 90%;
+  padding: 1.5rem;
+  margin: 0 auto;
+  border-radius: 1rem;
+  display: grid;
+  grid-template-areas: 'views'
+                       'slide'
+                       'price'
+                       'billing'
+                       'services'
+                       'cta';
+  grid-template-rows: 1fr 1fr 1fr 2fr 2fr 1fr;
+  grid-template-columns: 1fr;
+  justify-items: center;
+  align-items: center;
+  box-shadow: 1px 4px 28px 12px hsl(224, 65%, 95%);
+  margin-bottom: 1rem;
+}
+.page-views {
+  grid-area: views;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 0.8rem;
+  letter-spacing: 0.08rem;
+}
+
+/*  slider styling */
+
+.slider-container{
+  grid-area: slide;
+  width: 100%;
+  position: relative;
+}
+
+input[type="range"] {
+ -webkit-appearance: none;
+ background:linear-gradient(90deg, hsl(174, 77%, 80%) 50%, hsl(224, 65%, 95%) 50%);
+ outline: none;
+ height: 10px;
+ border-radius: 5px;
+ width: 100%;
+ position: relative;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+  -webkit-appearance: none;
+  width: 38px;
+  height: 38px;
+  background: url('/images/icon-slider.svg'),hsl(174, 86%, 45%);
+  background-repeat: no-repeat;
+  background-position: center;
+  border-radius: 50px;
+  cursor: pointer;
+  box-shadow: -2px 35px 238px -20px rgba(0,0,0,0.69);
+}
+
+/* main monthly price and billing */
+
+.price-per-month {
+  grid-area: price;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.dollar-sign,
+.price {
+  color: hsl(227, 35%, 25%);
+  font-size: 2rem;
+  font-weight: 800;
+}
+
+.price {
+  margin-right: 0.5rem;
+}
+
+.billing {
+  grid-area: billing;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.monthly-billing{
+  margin-right: 1rem;
+}
+.yearly-billing{
+  margin-left: 1rem;
+}
+/* toggle switch */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 2.8125rem;
+  height: 1.3125rem;
+}
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+.toggle-slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: hsl(223, 50%, 87%);
+  transition: 0.4s;
+  border-radius: 1rem;
+}
+.toggle-slider:before {
+  position: absolute;
+  content: "";
+  height: 13px;
+  width: 12px;
+  left: 4px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .toggle-slider {
+  background-color: hsl(174, 77%, 80%);
+}
+
+input:focus + .toggle-slider {
+  box-shadow: 0 0 1px #2196f3;
+}
+input:checked + .toggle-slider:before {
+  -webkit-transform: translateX(1.625rem);
+  -ms-transform: translateX(1.625rem);
+  transform: translateX(1.625rem);
+}
+.discount{
+  color: hsl(15, 100%, 70%);
+  font-size: 0.6rem;
+  padding: 0.18rem 0.36rem;
+  border-radius: 1rem;
+  background: hsl(14, 92%, 95%);
+  margin-left: 0.3125rem;
+  font-weight: bold;
+}
+
+
+/* services */
+
+.services{
+  grid-area: services;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+.services p{
+  display: inline-block;
+  margin-left: 0.875rem;
+  margin-bottom: 0.6rem;
+}
+
+/*  cta button */
+.start-trial{
+  grid-area: cta;
+  font-size: 0.7rem;
+  letter-spacing: 0.08rem;
+  padding: 0.8rem 3rem;
+  border-radius: 2rem;
+  color: hsl(226, 100%, 87%);
+  background-color: hsl(227, 35%, 25%);
+  cursor: pointer;
+}
+
+/* attribution */
+
+.attribution{
+  font-size: 0.8rem;
+  margin-bottom: 1rem;
+  text-align:center;
+}
+.attribution a{
+ text-decoration: none;
+}
+
+
+@media screen and (min-width: 500px) {
+
+  .heading {
+    font-size: 1.8rem;
+    margin-top: 6rem;
+    margin-bottom: 0.5rem;
+  }
+  .signup-conditions {
+    font-size: 1rem;
+    letter-spacing: -0.01rem;
+  }
+
+  .container {
+    min-height: 25rem;
+    max-width: 34rem;
+    display: grid;
+    grid-template-areas: 'views  price'
+                         'slide slide'
+                        'billing billing'
+                        'services cta';
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns:1fr 1fr;
+    padding: 3rem 3rem 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .page-views {
+    font-size: 1rem;
+    justify-self: baseline;
+  }
+  .price-per-month {
+    font-size: 1rem;
+  }
+  .dollar-sign,
+  .price {
+    font-size: 2.5rem;
+  }
+  .billing {
+    margin-bottom: 3rem;
+  }
+  .discount::after{
+    content: 'discount';
+    margin-left: 0.2rem;
+  }
+  .services {
+    margin-bottom: 0;
+    align-items: flex-start;
+    justify-self: baseline;
+  }
+  .start-trial{
+    justify-self: end;
+  }
+}
