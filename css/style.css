@@ -4,8 +4,8 @@
   box-sizing: border-box;
 }
 body {
-  background-image: url(./images/pattern-circles.svg),
-    url(./images/bg-pattern.svg);
+  background-image: url(../images/pattern-circles.svg),
+    url(../images/bg-pattern.svg);
   background-repeat: no-repeat;
   background-position: top 4rem left 51%, left top -2rem;
   font-family: "Manrope", sans-serif;
